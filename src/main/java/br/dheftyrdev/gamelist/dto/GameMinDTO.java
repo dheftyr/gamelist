@@ -1,12 +1,13 @@
 package br.dheftyrdev.gamelist.dto;
 
 import br.dheftyrdev.gamelist.entities.Game;
+import br.dheftyrdev.gamelist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
 	private Long id;
 	private String titulo;
-	private String ano;
+	private Integer ano;
 	private String imgUrl;
 	private String curtaDescricao;
 	
@@ -17,6 +18,14 @@ public class GameMinDTO {
 		imgUrl = entity.getImgUrl();
 		curtaDescricao = entity.getCurtaDescricao();
 	}
+	
+	public GameMinDTO(GameMinProjection projectio) {
+		id = projectio.getId();
+		titulo = projectio.getTitulo();
+		ano = projectio.getAno();
+		imgUrl = projectio.getImgUrl();
+		curtaDescricao = projectio.getCurtaDescricao();
+		}
 
 	public Long getId() {
 		return id;
@@ -26,7 +35,7 @@ public class GameMinDTO {
 		return titulo;
 	}
 
-	public String getAno() {
+	public Integer getAno() {
 		return ano;
 	}
 
@@ -37,6 +46,5 @@ public class GameMinDTO {
 	public String getCurtaDescricao() {
 		return curtaDescricao;
 	}
-	
 	
 }

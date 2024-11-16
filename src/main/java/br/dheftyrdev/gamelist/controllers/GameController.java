@@ -13,7 +13,7 @@ import br.dheftyrdev.gamelist.dto.GameMinDTO;
 import br.dheftyrdev.gamelist.services.GameService;
 
 @RestController
-@RequestMapping(value = "/games")
+@RequestMapping(value = "/game")
 public class GameController {
 	
 	@Autowired
